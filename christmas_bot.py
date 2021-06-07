@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+import os
 import discord
 from discord.ext import tasks
 
@@ -22,6 +23,5 @@ async def update_name_send_message():
     await client.user.edit(username = "IT'S CHRISTMAS IN {} DAYS".format(delta.days))
 
 
-file = open("token.txt")
-token = file.read()
-client.run(token)
+access_token= os.environ["ACCESS_TOKEN"]
+client.run(access_token)
