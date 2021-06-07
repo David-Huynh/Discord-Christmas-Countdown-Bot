@@ -1,4 +1,4 @@
-#Discord Bot that Countdowns to Christmas
+# Discord Bot that Countdowns to Christmas
 
 Discord bot deployed using heroku, made with python.
 
