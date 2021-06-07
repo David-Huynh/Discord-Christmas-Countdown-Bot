@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+from dotenv import load_dotenv
 import os
 import discord
 from discord.ext import tasks
@@ -22,6 +23,6 @@ async def update_name_send_message():
         await channel.send("IT'S CHRISTMAS IN {} DAYS".format(delta.days))
     await client.user.edit(username = "IT'S CHRISTMAS IN {} DAYS".format(delta.days))
 
-
+load_dotenv()
 access_token= os.environ["ACCESS_TOKEN"]
 client.run(access_token)
