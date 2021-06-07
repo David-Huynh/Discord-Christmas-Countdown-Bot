@@ -8,10 +8,12 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+    test = "200"
+    client.user.edit(username = "IT'S CHRISTMAS IN {} DAYS".format(test))
     if message.author == client.user:
         return
-
-    if message.content.startswith('$hello'):
-        await message.channel.send('Hello!')
-
-client.run('ODUxNDg2OTUzOTQxMjM3ODEw.YL4_BQ.P967E_TERQtmBh4icz3N4iF_BoU')
+    else:
+        await message.channel.send('STFU!')
+file = open("token.txt")
+token = file.read()
+client.run(token)
