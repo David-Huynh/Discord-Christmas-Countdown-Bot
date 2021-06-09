@@ -47,7 +47,7 @@ async def update_name():
 async def christmas_date():
     for guild in client.guilds:
         channel = client.get_channel(guild.text_channels[0].id)
-        await client.user.send(client.user.display_name)
+        await channel.send(client.user.display_name)
 
 load_dotenv()
 access_token= os.environ["ACCESS_TOKEN"]
