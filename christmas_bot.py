@@ -11,6 +11,7 @@ bot = commands.Bot(command_prefix='-')
 #starts the update task when the client is ready
 @client.event
 async def on_ready():
+    bot.add_command(christmas_date)
     update_name.start()
     send_message.start()
     print('We have logged in as {0.user}'.format(client))
