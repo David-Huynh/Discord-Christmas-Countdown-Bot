@@ -6,7 +6,7 @@ from discord.ext import tasks, commands
 
 #Creates an instance of a discord client
 client = discord.Client()
-bot = commands.Bot(command_prefix='-')
+bot = commands.Bot(command_prefix='+')
 
 #starts the update task when the client is ready
 @client.event
@@ -44,10 +44,8 @@ async def update_name():
 
 #Command to check the days till Christmas
 @bot.command()
-async def christmas_date():
-    for guild in client.guilds:
-        channel = client.get_channel(guild.text_channels[0].id)
-        await channel.send(client.user.display_name)
+async def christmas_date(ctx):
+    await ctx.send(client.user.display_name)
 
 load_dotenv()
 access_token= os.environ["ACCESS_TOKEN"]
